@@ -1,4 +1,3 @@
-
 {
     "scripts": {
           "build": "sudo apt-get install pkg-config libcairo2-dev"
