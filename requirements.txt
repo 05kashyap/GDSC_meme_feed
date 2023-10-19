@@ -39,7 +39,6 @@ PyJWT==2.3.0
 pyparsing==2.4.7
 python-apt==2.4.0+ubuntu1
 python-dateutil==2.8.2
-PyYAML==5.4.1
 readme-renderer==42.0
 requests==2.31.0
 requests-toolbelt==1.0.0
