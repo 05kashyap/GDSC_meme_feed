@@ -4,7 +4,6 @@ certifi==2023.7.22
 charset-normalizer==3.2.0
 contourpy==1.1.1
 crispy-bootstrap4==2022.1
-pycairo==1.25.0
 cryptography==3.4.8
 cycler==0.11.0
 dbus-python==1.2.18
@@ -25,13 +24,6 @@ lazr.uri==1.0.6
 markdown-it-py==3.0.0
 matplotlib==3.8.0
 mdurl==0.1.2
-more-itertools==8.10.0
-netifaces==0.11.0
-networkx==3.1
-nh3==0.2.14
-numpy==1.26.0
-oauthlib==3.2.0
-packaging==23.1
 Pillow==10.0.1
 pkginfo==1.9.6
 Pygments==2.16.1
@@ -50,9 +42,7 @@ SecretStorage==3.3.1
 six==1.16.0
 sqlparse==0.4.4
 systemd-python==234
-twine==4.0.2
 typing_extensions==4.7.1
-ubuntu-advantage-tools==8001
 ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==2.0.4
