@@ -1,4 +1,5 @@
-# GDSC_meme_feed
+# GDSC_meme_feed ![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/aaf7842c-14d7-4ccd-bff0-34b98e03c05a)
+
 Full stack social media website for memes built in python with django.
 
 ## User Features:
