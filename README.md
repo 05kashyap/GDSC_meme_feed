@@ -24,6 +24,25 @@ email:
 instructions:
 ![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/2265535e-e040-4c39-95ad-a38479cb827d)
 
+User profile:
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/fce74465-595a-4ae2-9fe3-fa93488e0d3b)
+
+User created memes + score:
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/1c79ac31-c18f-4443-87fb-d70f22235cce)
+
+Post Meme:
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/6a7efe23-5e91-412b-bcc2-a621a81bdcc7)
+
+View Available meme templates:
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/a0fc95e2-5ea2-41bd-b0ce-fc594048917a)
+
+
+
+
 
 ### Follower/following system
 
