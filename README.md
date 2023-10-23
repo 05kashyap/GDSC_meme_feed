@@ -6,7 +6,20 @@ Full stack social media website for memes built in python with django.
 ## User Features:
 
 ### User registration and authentication.
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/9de38b06-dd7b-4aff-b700-a4db70c8fd84)
+Login/register
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/08511c49-9088-4e27-90b5-63017169e33f)
+
 ### Reset Password
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/78a61469-1a58-4a38-b6eb-341403dca785)
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/874b0c02-52ea-402b-b200-70d944bee4f7)
+email:
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/43489a61-995f-4d65-9ce7-c3ea981f125b)
+instructions:
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/2265535e-e040-4c39-95ad-a38479cb827d)
+
+
 ### Follower/following system
 
 ## Post Features:
