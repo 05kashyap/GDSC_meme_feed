@@ -11,7 +11,8 @@ Setup Instructions:
 ### User registration and authentication.
 
 ![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/9de38b06-dd7b-4aff-b700-a4db70c8fd84)
-Login/register
+
+### Login/register
 
 ![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/08511c49-9088-4e27-90b5-63017169e33f)
 
