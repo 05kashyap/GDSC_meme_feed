@@ -2,9 +2,20 @@ import requests
 import json
 import random
 from typing import Optional
+from .models import Post
 
 IMG_API_URL = "https://api.imgflip.com/caption_image" 
 API_URL = "https://api.memegen.link/templates/"
+
+def get_top():
+    top_posts = Post.objects.order_by('-likes')[:3]
+
+    context = {
+        'top_posts': top_posts
+    }
+
+    return context
+
 def get_meme_url() -> Optional[str]:
     try:
         # Make the request to imgflip API

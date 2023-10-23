@@ -20,15 +20,13 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static 'feed/css/styles.css' %}" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'feed/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'feed/flex_paginate/style.css' %}">
+   
 
 
 
@@ -55,16 +53,24 @@
             <div class=" collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ms-auto ">
                 <li class="nav-item">
-                  <a class="nav-link mx-2 active" aria-current="page" href="{% url 'feed-home' %}">Font Page</a>
+                  {% url 'feed-home' as the_url %}
+                  {% if request.get_full_path == the_url %}
+                  <a class="nav-link mx-2 active" aria-current="page" href="{% url 'feed-home' %}">Front Page</a>
+                  {% else %}
+                  <a class="nav-link mx-2 text-warning" aria-current="page" href="{% url 'feed-home' %}">Front Page</a>
                 </li>
+                  {% endif %}
                 {% if user.is_authenticated %}
                 <li class="nav-item">
+                  {% url 'my-feed' as s_url %}
+                  {% if request.get_full_path == s_url %}
+                  <a class="nav-link mx-2 active"  href="{% url 'my-feed' %}">My Feed</a>
+                  {% else %}
                   <a class="nav-link mx-2 text-warning"  href="{% url 'my-feed' %}">My Feed</a>
+                  {% endif %}
                 </li>
                 {% endif %}
-                <li class="nav-item">
-                  <a class="nav-link mx-2 text-warning"  href="{% url 'feed-about' %}">About</a>
-                </li>
+               
                 <li class="nav-item dropdown">
                   <a class="nav-link mx-2 dropdown-toggle text-warning" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Profile
@@ -73,7 +79,7 @@
                     {% if user.is_authenticated %}
                     <li><a class="dropdown-item" href="{% url 'post-create' %}">Create Post</a></li>
                     <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                    <li><a class="dropdown-item" href="{% url 'curr-user-posts' %}">My Posts</a></li>
+                    <li><a class="dropdown-item" href="{% url 'curr-user-posts' %}">My Memes</a></li>
 
                     <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
@@ -82,6 +88,10 @@
                     {% endif %}
                   </ul>
                 </li>
+                {% if user.is_authenticated %}
+                <img src="{{ user.profile.image.url}}" alt="avatar" class="img-fluid"
+                style="width: 50px; border-radius: 10px;">
+                {% endif %}
               </ul>
             </div>
           </div>
@@ -102,7 +112,7 @@
             {% endif %}
             {% block content %}{% endblock %}
           </div>
-          
+         
         </div>
       </main>
 
@@ -137,9 +147,7 @@
               <p>
                 <a href="https://github.com/05kashyap" class="text-info" style="text-decoration: none;">My Github</a>
               </p>
-              <p>
-                <a href="#" class="text-white" style="text-decoration: none;">Help</a>
-              </p>
+            
             </div>
       
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -171,11 +179,9 @@
                     <li class="list-inline-item">
                       <a href="https://github.com/05kashyap" class="btn-floating btn-sm text-dark" style="font-size: 23px;"><i class="fab fa-github"></i></a>
                     </li>
+                  
                     <li class="list-inline-item">
-                      <a href="#" class="btn-floating btn-sm" style="font-size: 23px;"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#" class="btn-floating btn-sm text-dark" style="font-size: 23px;"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="https://www.linkedin.com/in/aryan-kashyap-naveen-a3b21a259/" class="btn-floating btn-sm text-dark" style="font-size: 23px;"><i class="fab fa-linkedin-in"></i></a>
                     </li>
                   </ul>
                 </div>

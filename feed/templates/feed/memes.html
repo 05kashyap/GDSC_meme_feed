@@ -1,7 +1,9 @@
 {% extends "feed/base.html" %}
 
 {% block content %}
+    <h1 class="info-box">Available meme templates: </h1>
     <section >
+
         {% for id, link in memes %}
             <article class="media content-section" style="background-color:Linen ;">
                 <div class="media-body">

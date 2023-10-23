@@ -1,6 +1,6 @@
 from typing import Any
 import json
-from .utils import generate_meme, get_meme_url, get_templates
+from .utils import generate_meme, get_meme_url, get_templates, get_top
 from users.models import Profile
 from .models import Like, Post, Comment
 from django.db import models
@@ -27,8 +27,7 @@ from django.views.generic import (ListView,
 #from .models import Post # takes post from database
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the feed index.")
+
 
 
 def follow_view(request, profile_id):
@@ -48,9 +47,17 @@ def unfollow_view(request, profile_id):
 class PostListView(ListView):
     model = Post 
     template_name = 'feed/home.html'
-    context_object_name = 'posts'
+    #context_object_name = 'posts'
     ordering = ['-date_posted'] # minus sign means newest to oldest
     paginate_by = 5
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['posts'] = Post.objects.order_by('-date_posted')
+        context['top'] = Post.objects.values('id').annotate(likes_count=Count('likes')).order_by('-likes_count')[:3]
+
+
+        return context
     
 
 class FollowPostListView(ListView):
