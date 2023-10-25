@@ -2,16 +2,40 @@
 
 {% block content %}
 
-        
+
+    
+<div class="card-deck" >
+   
+    <div class="card mb-3">
+        {% if top.0 %}
+        <img class="card-img-top" src="{{ top.0.meme }}" alt="Card image cap"  width="962" height="300">
+        <div class="card-body" style="background-color:Linen ;">
+        <h5 class="card-title">Featured Post</h5>
+        <p class="article-title" >        <i class="far fa-thumbs-up mx-2 fa-xs text-black" style="margin-left: -0.16rem;"></i>
+            {{ top.0.post_likes.count }} Likes</a></p>
+        <p class="card-text">{{ top.0.title }}</p>
+       
+        <a href="{% url 'post-detail' top.0.id %}" class="btn btn-primary">View meme</a>
+        <p class="card-text"><small class="text-muted">Posted on {{ top.0.date_posted|date:"F d, Y" }}</small></p>
+        {% else %}
+        <h1>Be the first to post</h1>
+        {% endif %}
+        </div>
+      </div>
+    
+    
+    </div>
+  </div>
+
     <section>
         <div class="row">
-          {% for to in top %}
-            <h1>{{ to.title }}</h1>
-            {% endfor %}
-            <div class="col-md-15">
-        <div class="col-md-4">
+            
+            <div class="col-md-8">
+     
 
-        </div>
+           
+          
+
         {% for post in posts %}
             <article class="media content-section" style="background-color:Linen ;">
                 <img class="rounded article-img" src="{{ post.author.profile.image.url }}">
@@ -44,31 +68,33 @@
            
             
         {% endfor %}
-        </section>
         {% if is_paginated %}
-            {% if page_obj.has_previous %}
-                <a class="btn btn-primary mb-4" href="?page=1">First</a>
-                <a class="btn btn-primary mb-4" href="?page={{ page_obj.previous_page_number }}">Prev</a>
-            {% endif %}
-
-            {% for num in page_obj.paginator.page_range %}
-                {% if page_obj.number == num %}
-                    <a class="btn btn-primary mb-4" href="?page={{ num }}">{{ num }}</a>
-                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a class="btn btn-outline-primary mb-4" href="?page={{ num }}">{{ num }}</a>
-
-                {% endif %}
-
-            {% endfor %}
-
-            {% if page_obj.has_next %}
-            <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-            <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-            {% endif %}
-
+        {% if page_obj.has_previous %}
+            <a class="btn btn-primary mb-4" href="?page=1">First</a>
+            <a class="btn btn-primary mb-4" href="?page={{ page_obj.previous_page_number }}">Prev</a>
         {% endif %}
-        
 
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a class="btn btn-primary mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class="btn btn-outline-primary mb-4" href="?page={{ num }}">{{ num }}</a>
+
+            {% endif %}
+
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+
+    {% endif %}
     
+
+        </section>
+      
+       
+
     
 {% endblock content %}

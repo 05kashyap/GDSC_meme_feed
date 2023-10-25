@@ -54,11 +54,11 @@ class PostListView(ListView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.order_by('-date_posted')
-        context['top'] = Post.objects.values('id').annotate(likes_count=Count('likes')).order_by('-likes_count')[:3]
+        context['top'] = Post.objects.order_by('-post_likes')[:1]
 
 
         return context
-    
+            
 
 class FollowPostListView(ListView):
     model = Post 
