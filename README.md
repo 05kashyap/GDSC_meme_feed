@@ -5,6 +5,9 @@ Full stack social media website for memes built in python with django.
 
 Setup Instructions:
 - Install requirements.txt
+# Walkthrough video:
+https://drive.google.com/file/d/18C5ZaZYH_lBG1wvdm6JQ4t1t7SyXZjby/view?usp=drive_link
+
 # Feature Overview:
 #### -User registration and authentication.
 #### -Reset Password
