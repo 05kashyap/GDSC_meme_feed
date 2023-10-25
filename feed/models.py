@@ -58,8 +58,10 @@ class Comment(models.Model):
 
 class LikeManager(models.Manager):
     def total_likes_for_user_posts(self, user):
-        return self.filter(post__author=user).values('post__author').annotate(total_likes=Count('id')).values('total_likes')[0]['total_likes'] #known issue: messes up for 0 likes, fix latr
-    
+        try:
+            return self.filter(post__author=user).values('post__author').annotate(total_likes=Count('id')).values('total_likes')[0]['total_likes'] #known issue: messes up for 0 likes, fix latr
+        except:
+            return 0 
 
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

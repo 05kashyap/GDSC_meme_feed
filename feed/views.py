@@ -2,6 +2,7 @@ from typing import Any
 import json
 from .utils import generate_meme, get_meme_url, get_templates, get_top
 from users.models import Profile
+from django.db.models import Count, F
 from .models import Like, Post, Comment
 from django.db import models
 from django.db.models import Sum
@@ -54,11 +55,11 @@ class PostListView(ListView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.order_by('-date_posted')
-        context['top'] = Post.objects.order_by('-post_likes')[:1]
-
+        top_post = Post.objects.annotate(like_count=Count('post_likes')).order_by(F('like_count').desc())[:1].first()
+        context['top'] = top_post
 
         return context
-            
+
 
 class FollowPostListView(ListView):
     model = Post 

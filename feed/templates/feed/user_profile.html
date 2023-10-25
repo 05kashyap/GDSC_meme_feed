@@ -49,6 +49,7 @@
                         {% else %}
                             <button class= 'btn btn-primary flex-grow-1' onclick="window.location='{% url 'follow' post1.author.profile.id %}'">Follow</button>
                         {% endif %}
+                     
                         {% endif %}
                         
                       
@@ -69,7 +70,10 @@
                     </div>
                   </div>
                 </div>
+                
                 {% endwith %}
+                {% else %}
+                <button class='btn btn-primary flex-grow-1' onclick="window.location='{% url 'post-create'  %}'">Create your first meme!</button>
                 {% endif %}
           </div>
 
