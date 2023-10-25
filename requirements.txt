@@ -3,7 +3,6 @@ gunicorn==20.1.0
 blinker==1.4
 certifi==2023.7.22
 charset-normalizer==3.3.1
-command-not-found==0.3
 crispy-bootstrap4==2022.1
 cycler==0.11.0
 cryptography==3.4.8
