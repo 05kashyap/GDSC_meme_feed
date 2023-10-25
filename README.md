@@ -4,10 +4,28 @@
 Full stack social media website for memes built in python with django.
 
 Setup Instructions:
+
+- Clone the repository
+```python
+  gh repo clone https://github.com/PATH-TO/REPOSITORY
+```
 - Install requirements.txt
   ```python
   pip install -r requirements.txt
   ```
+- Make migrations
+  ```python
+  python manage.py makemigrations
+  ```
+- Apply migrations
+  ```python
+  python manage.py migrate
+  ```
+- Apply migrations
+  ```python
+  python manage.py runserver
+  ```
+
 # Walkthrough video:
 https://drive.google.com/file/d/18C5ZaZYH_lBG1wvdm6JQ4t1t7SyXZjby/view?usp=drive_link
 
