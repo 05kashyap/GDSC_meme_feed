@@ -7,14 +7,6 @@ from .models import Post
 IMG_API_URL = "https://api.imgflip.com/caption_image" 
 API_URL = "https://api.memegen.link/templates/"
 
-def get_top():
-    top_posts = Post.objects.order_by('-likes')[:3]
-
-    context = {
-        'top_posts': top_posts
-    }
-
-    return context
 
 def get_meme_url() -> Optional[str]:
     try:
@@ -33,6 +25,7 @@ def get_meme_url() -> Optional[str]:
         return None
 
 def generate_meme(template_id, top_text, bottom_text):
+    '''Generate meme from id, top and bottom text POST'''
     top_text = str(top_text)
     bottom_text = str(bottom_text)
     API_URL = "https://api.memegen.link/templates/"
@@ -53,6 +46,7 @@ def generate_meme(template_id, top_text, bottom_text):
     return (data['url'])
 
 def get_templates():
+    '''Retrieve available templates GET'''
     API_URL = "https://api.memegen.link/templates"
     ids = []
     links = []

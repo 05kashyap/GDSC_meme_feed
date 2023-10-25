@@ -26,12 +26,14 @@ from django.views.generic import (ListView,
 
 
 def follow_view(request, profile_id):
+    '''View that adds followers'''
     user_profile = request.user.profile
     target_profile = Profile.objects.get(pk=profile_id)
     Profile.objects.follow(user_profile, target_profile)
     return redirect('profile')
 
 def unfollow_view(request, profile_id):
+    '''View that removes followers'''
     user_profile = request.user.profile
     target_profile = Profile.objects.get(pk=profile_id)
     Profile.objects.unfollow(user_profile, target_profile)
@@ -40,6 +42,7 @@ def unfollow_view(request, profile_id):
 
 
 class PostListView(ListView):
+    '''Home page all posts view'''
     model = Post 
     template_name = 'feed/home.html'
     #context_object_name = 'posts'
@@ -56,6 +59,7 @@ class PostListView(ListView):
 
 
 class FollowPostListView(ListView):
+    '''My feed view'''
     model = Post 
     template_name = 'feed/myfeed.html'
     context_object_name = 'posts'
@@ -73,6 +77,7 @@ class FollowPostListView(ListView):
         return queryset
 
 class UserPostListView(ListView):
+    '''View specific users posts'''
     model = Post 
     template_name = 'feed/user_posts.html'
     #context_object_name = 'posts'
@@ -105,6 +110,7 @@ class UserPostListView(ListView):
 
     
 class CurrUserPostListView(LoginRequiredMixin,ListView):
+    '''View logged in users' posts'''
     model = User 
     template_name = 'feed/user_profile.html'
     paginate_by = 5
@@ -116,20 +122,9 @@ class CurrUserPostListView(LoginRequiredMixin,ListView):
         context['total_likes'] = total_likes
         return context
 
-'''
-class UserPostListView(ListView):
-    model = Post 
-    template_name = 'feed/user_posts.html'
-    context_object_name = 'posts'
-    ordering = ['-date_posted'] # minus sign means newest to oldest
-    paginate_by = 5
-
-    def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
-'''
 
 class PostDetailView(DetailView):
+    '''View post, comments in detail'''
     model = Post 
     fields = ['title', 'content']
     def get_context_data(self, **kwargs):
@@ -156,6 +151,7 @@ class PostDetailView(DetailView):
         return super().post(request, *args, **kwargs)
 
 class PostCreateView(LoginRequiredMixin, CreateView):
+    '''Form to create a meme'''
     model = Post 
     fields = ['title', 'content','meme_template_id','top_text','bottom_text']
 
@@ -180,6 +176,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     
 #make into class based view for pagination later    
 def meme_templates(request):
+    '''View to return available templates'''
     memes = get_templates()
     meme_zip = zip(memes[0],memes[1])
     paginate_by = 5
@@ -189,6 +186,7 @@ def meme_templates(request):
     return render(request, 'feed/memes.html', context)#html template
 
 class CommentCreateView(LoginRequiredMixin, CreateView):
+    '''Comment creation form'''
     model = Comment
     form_class = CommentForm
     template_name = 'feed/post_comment.html'
@@ -205,6 +203,7 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
         return reverse('post-detail', args=[self.kwargs['pk']])
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    '''Meme updation form'''
     model = Post 
     fields = ['title', 'content','meme_template_id','top_text','bottom_text']
 
@@ -233,6 +232,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return False
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    '''Meme delete view'''
     model = Post 
     success_url = '/'
 
@@ -241,10 +241,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
-
-def about(request):
-    context = {
-        'title': 'NITK'
-    }
-    return render(request, 'feed/about.html', context)
 
