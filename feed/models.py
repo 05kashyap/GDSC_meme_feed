@@ -11,6 +11,7 @@ from django.dispatch import receiver
 # Create your models here.
 
 class Post(models.Model):
+    '''Meme post model'''
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
@@ -24,14 +25,15 @@ class Post(models.Model):
 
 
     def __str__(self):
+        '''returns title'''
         return self.title
 
     def get_absolute_url(self):
-        return reverse("post-detail", kwargs={"pk": self.pk}) #to generate path to redirect after creating user
-    
-    #def save(self, *args, **kwargs):
+        '''returns to post detail using pk after post is created'''
+        return reverse("post-detail", kwargs={"pk": self.pk}) #to generate path to redirect after creating post
 
     def save(self, *args, **kwargs):
+        '''Update like count + code to resize images (Functionality can be added to add custom images)'''
         if self.pk is not None:  
             self.likes = self.post_likes.count() # use new related_name
 
@@ -44,6 +46,7 @@ class Post(models.Model):
             img.save(self.image.path)
 
 class Comment(models.Model):
+    '''Comments model'''
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')   
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)#if user deleted, posts deleted
     body = models.TextField()
@@ -54,6 +57,7 @@ class Comment(models.Model):
 
 
 class LikeManager(models.Manager):
+    '''manages user likes'''
     def total_likes_for_user_posts(self, user):
         try:
             return self.filter(post__author=user).values('post__author').annotate(total_likes=Count('id')).values('total_likes')[0]['total_likes'] #known issue: messes up for 0 likes, fix latr
@@ -61,6 +65,7 @@ class LikeManager(models.Manager):
             return 0 
 
 class Like(models.Model):
+    '''likes'''
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='post_likes')
     #imestamp = models.DateTimeField(auto_now_add=True)

@@ -64,7 +64,8 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <ul>
                             {% for follower in post1.author.profile.get_followers %}
-                              <li class="dropdown-item">{{ follower.username }}</li>  
+                              <li class="dropdown-item"><img class="rounded-circle account-img"alt="avatar" class="img-fluid"
+                                style="height: 30px; width: 30px; border-radius: 10px;"  src="{{ follower.profile.image.url }}" ><a href="{% url 'user-posts' follower.username %}">{{ follower.username }}</a></li>  
                             {% endfor %}
                         </ul>
                     </div>

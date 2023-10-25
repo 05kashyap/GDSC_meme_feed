@@ -8,7 +8,7 @@ from PIL import Image #pillow used for resizing
 
 #upm tbd
 class ProfileManager(models.Manager):
-
+    '''Manages unfollowing and following'''
     def follow(self, user_profile, target_profile):
         target_profile.followers.add(user_profile.user)
         user_profile.following.add(target_profile.user)
@@ -35,6 +35,7 @@ class FollowingCount(models.Model):
 
 
 class Profile(models.Model):
+    '''User profile model'''
     user = models.OneToOneField(User, on_delete=models.CASCADE)#cascade: if one post of user del, user is not del but if user is del all posts die
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     followers = models.ManyToManyField(User, related_name='followers')
