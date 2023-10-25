@@ -4,7 +4,7 @@
 Full stack social media website for memes built in python with django.
 
 Setup Instructions:
-
+(Ideally inside a virtual env)
 - Clone the repository
 ```python
   gh repo clone https://github.com/05kashyap/GDSC_meme_feed
