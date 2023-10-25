@@ -50,6 +50,15 @@ https://drive.google.com/file/d/1VlJIUAIxN4pO8K2yDPfosjD495uBIbzb/view?usp=shari
 
 ![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/5259dba5-07c9-486d-9d7f-f7dd18f59b93)
 
+# User profile page with followers and following:
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/91a20214-7524-4219-ab1f-36daeffeb7a7)
+
+# User posts, dankscore (similar to reddit karma):
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/0b02aa10-cccc-4597-88d6-a3a53bd53ff6)
+
+
 ## User Features:
 
 ### User registration and authentication.
