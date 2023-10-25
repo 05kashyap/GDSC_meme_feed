@@ -6,18 +6,18 @@ Full stack social media website for memes built in python with django.
 Setup Instructions:
 - Install requirements.txt
 # Feature Overview:
--User registration and authentication.
--Reset Password
+#### -User registration and authentication.
+#### -Reset Password
 
--Create memes with memegen API
--View created memes in your posts
--Accumulate higher "dankscore" as more likes are earned
--Like posts
--Comment under posts
+#### -Create memes with memegen API
+#### -View created memes in your posts
+#### -Accumulate higher "dankscore" as more likes are earned
+#### -Like posts
+#### -Comment under posts
 
--Follow meme creators
--personalized "your feed" to view content from following creaters
--Featured section with top liked posts
+#### -Follow meme creators
+#### -personalized "your feed" to view content from following creaters
+#### -Featured section with top liked posts
 
 # Front page:
 
