@@ -1,19 +1,13 @@
 from typing import Any
-import json
-from .utils import generate_meme, get_meme_url, get_templates, get_top
+from .utils import generate_meme, get_templates
 from users.models import Profile
 from django.db.models import Count, F
 from .models import Like, Post, Comment
-from django.db import models
-from django.db.models import Sum
-from django.db.models import Subquery, OuterRef, Sum
 from django.core.files.storage import FileSystemStorage 
-import requests
 from .forms import CommentForm
 from django.urls import reverse
 from django.db.models import Count
 from django.shortcuts import HttpResponseRedirect
-from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin

@@ -10,15 +10,12 @@ from django.dispatch import receiver
 
 # Create your models here.
 
-
-
-
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)#if user deleted, posts deleted
-    image = models.ImageField(upload_to='post_pics', default='default.jpg')
+    image = models.ImageField(upload_to='post_pics', default='default.jpg')#option to add custom image functionality
     likes = models.IntegerField(default=0)
     meme_template_id = models.CharField(max_length=100, default="bilbo") 
     top_text = models.CharField(max_length=100, default="Enter top text")
