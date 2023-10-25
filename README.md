@@ -27,6 +27,9 @@ Setup Instructions:
   ```
 
 # Walkthrough video:
+
+<iframe src="https://drive.google.com/file/d/1VlJIUAIxN4pO8K2yDPfosjD495uBIbzb/preview" width="640" height="480" allow="autoplay"></iframe>
+
 https://drive.google.com/file/d/1VlJIUAIxN4pO8K2yDPfosjD495uBIbzb/view?usp=sharing
 
 # Feature Overview:
