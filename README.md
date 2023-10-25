@@ -7,7 +7,7 @@ Setup Instructions:
 (Ideally inside a virtual env)
 - Clone the repository
 ```python
-  git repo clone https://github.com/05kashyap/GDSC_meme_feed
+  git clone https://github.com/05kashyap/GDSC_meme_feed
 ```
 - Install requirements.txt
   ```python
@@ -27,7 +27,7 @@ Setup Instructions:
   ```
 
 # Walkthrough video:
-https://drive.google.com/file/d/18C5ZaZYH_lBG1wvdm6JQ4t1t7SyXZjby/view?usp=drive_link
+https://drive.google.com/file/d/1VlJIUAIxN4pO8K2yDPfosjD495uBIbzb/view?usp=sharing
 
 # Feature Overview:
 #### -User registration and authentication.
