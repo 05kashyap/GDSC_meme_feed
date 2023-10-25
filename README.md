@@ -7,7 +7,7 @@ Setup Instructions:
 (Ideally inside a virtual env)
 - Clone the repository
 ```python
-  gh repo clone https://github.com/05kashyap/GDSC_meme_feed
+  git repo clone https://github.com/05kashyap/GDSC_meme_feed
 ```
 - Install requirements.txt
   ```python
