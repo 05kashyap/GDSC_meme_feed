@@ -14,6 +14,5 @@ urlpatterns = [
     path("post/new/", PostCreateView.as_view(), name = "post-create"),#int pk tells to get integers after prim key to grab posts
     path("post/<int:pk>/update", PostUpdateView.as_view(), name = "post-update"),
     path("post/<int:pk>/delete", PostDeleteView.as_view(), name = "post-delete"),
-    path("about/", views.about, name = 'feed-about'),
     path("post/memes/", views.meme_templates, name = 'post-memes'),
 ]

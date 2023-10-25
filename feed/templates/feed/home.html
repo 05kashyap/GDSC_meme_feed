@@ -20,7 +20,11 @@
         <p class="card-text">{{ top.title }}</p>
         <div class="article-metadata">
         </div>
+        {% if user.is_authenticated %}
         <a href="{% url 'post-detail' top.id %}" class="btn btn-primary">View meme</a>
+        {% else  %}
+        <a href="{% url 'login' %}" class="btn btn-primary">Login to view meme</a>
+        {% endif %}
         <p class="card-text"><small class="text-muted">Posted on {{ top.date_posted|date:"F d, Y" }}</small></p>
         {% else %}
         <h1>Be the first to post</h1>
