@@ -4,7 +4,48 @@
 Full stack social media website for memes built in python with django.
 
 Setup Instructions:
+
+- Clone the repository
+```python
+  gh repo clone https://github.com/05kashyap/GDSC_meme_feed
+```
 - Install requirements.txt
+  ```python
+  pip install -r requirements.txt
+  ```
+- Make migrations
+  ```python
+  python manage.py makemigrations
+  ```
+- Apply migrations
+  ```python
+  python manage.py migrate
+  ```
+- Apply migrations
+  ```python
+  python manage.py runserver
+  ```
+
+# Walkthrough video:
+https://drive.google.com/file/d/18C5ZaZYH_lBG1wvdm6JQ4t1t7SyXZjby/view?usp=drive_link
+
+# Feature Overview:
+#### -User registration and authentication.
+#### -Reset Password
+
+#### -Create memes with memegen API
+#### -View created memes in your posts
+#### -Accumulate higher "dankscore" as more likes are earned
+#### -Like posts
+#### -Comment under posts
+
+#### -Follow meme creators
+#### -personalized "your feed" to view content from following creaters
+#### -Featured section with top liked posts
+
+# Front page:
+
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/5259dba5-07c9-486d-9d7f-f7dd18f59b93)
 
 ## User Features:
 
