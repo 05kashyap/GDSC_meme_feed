@@ -1,4 +1,5 @@
-![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/aaf7842c-14d7-4ccd-bff0-34b98e03c05a)
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/33b3e6af-7fe1-4cc3-8a44-b905b97b31c4)
+
 # GDSC_meme_feed - Meme Hub
 
 Full stack social media website for memes built in python with django.
@@ -46,15 +47,17 @@ https://drive.google.com/file/d/1VlJIUAIxN4pO8K2yDPfosjD495uBIbzb/view?usp=shari
 
 # Front page:
 
-![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/5259dba5-07c9-486d-9d7f-f7dd18f59b93)
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/bed6152f-0e9e-4e98-82cf-bc7d7bdabc41)
+
 
 # User profile page with followers and following:
 
-![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/91a20214-7524-4219-ab1f-36daeffeb7a7)
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/bf83fa53-8be0-4aca-baf2-2a2b70d8b8b0)
+
 
 # User posts, dankscore (similar to reddit karma):
 
-![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/0b02aa10-cccc-4597-88d6-a3a53bd53ff6)
+![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/2a5d7ee1-6fc3-4b90-8204-e057814f9894)
 
 
 ## User Features:
