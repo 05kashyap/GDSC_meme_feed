@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Union
 from .utils import generate_meme, get_templates
 from users.models import Profile
 from django.db.models import Count, F
@@ -225,7 +225,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         post.save()
         return super().form_valid(form)
     
-    def test_func(self) -> bool | None:
+    def test_func(self) -> Union[bool, None]:
         post = self.get_object()
         if self.request.user == post.author:
             return True
@@ -236,7 +236,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post 
     success_url = '/'
 
-    def test_func(self) -> bool | None:
+    def test_func(self) -> Union[bool, None]:
         post = self.get_object()
         if self.request.user == post.author:
             return True
