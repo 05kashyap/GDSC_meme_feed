@@ -1,5 +1,5 @@
 ![image](https://github.com/05kashyap/GDSC_meme_feed/assets/120780494/33b3e6af-7fe1-4cc3-8a44-b905b97b31c4)
-
+WEC-GDSC recruitment  
 # GDSC_meme_feed - Meme Hub
 
 Full stack social media website for memes built in python with django.
